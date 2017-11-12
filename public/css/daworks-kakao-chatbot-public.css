@@ -1,0 +1,63 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+#daworks-chatbot-wrap {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	clear:both;
+	font-family:sans-serif;
+}
+#daworks-chatbot-wrap .card {
+	flex-basis:250px;
+	margin-right:1em;
+	margin-bottom:1em;
+	border:1px solid #ccc;
+	padding:5px;
+	position:relative;
+}
+#daworks-chatbot-wrap .card picture {
+	display:block;
+	margin-bottom:10px;
+}
+#daworks-chatbot-wrap .card picture img {
+	width:100%;
+	height:auto;
+}
+#daworks-chatbot-wrap .card .card-title {
+	font-weight:bold;
+	text-align:center;
+	padding-bottom:5px;
+	margin-bottom:1em;
+	border-bottom:1px solid #eee;
+}
+#daworks-chatbot-wrap .card .card-content {
+	font-size:0.9em;
+	margin-bottom:1em;
+}
+#daworks-chatbot-wrap .card .card-name {
+	font-size:.9em;
+	line-height:1.6em;
+}
+#daworks-chatbot-wrap .card .card-date {
+	float:right;
+	font-size:.8em;
+}
+.daworks-chatbot-pagination {
+	list-style-type:none;
+}
+.daworks-chatbot-pagination  > li {
+	display:inline-block;
+	padding:5px 8px;
+	font-family:sans-serif;
+	font-weight:bold;
+}
+
+.daworks-chatbot-pagination  > li > a {
+	text-decoration:none;
+}
+
+.daworks-chatbot-pagination  > .active > a {
+	color:#FF5659;
+}
