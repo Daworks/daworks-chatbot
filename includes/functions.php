@@ -468,6 +468,7 @@
 	}
 	
 	add_action('wp_enqueue_scripts', 'daworks_chatbot_load_lightbox');
+	add_action('admin_enqueue_scripts', 'daworks_chatbot_load_lightbox');
 	function daworks_chatbot_load_lightbox()
 	{
 		wp_enqueue_style( 'lightbox_css',plugin_dir_url ( __DIR__ ) . 'library/lightbox2/css/lightbox.min.css');

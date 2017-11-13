@@ -116,7 +116,7 @@
 				'챗봇 설정',
 				'manage_options',
 				'daworks-chatbot-setting',
-				array($this, 'loading_setting_page')
+				array ( $this, 'loading_setting_page' )
 			);
 			add_submenu_page (
 				'daworks-chatbot',
@@ -124,7 +124,7 @@
 				'목록',
 				'manage_options',
 				'daworks-chatbot-result',
-				array($this, 'loading_result_page')
+				array ( $this, 'loading_result_page' )
 			);
 		}
 		
@@ -140,41 +140,67 @@
 			require plugin_dir_path ( __DIR__ ) . 'library/PHP-Pagination/Pagination.class.php';
 			
 			global $wpdb;
-			$table = $wpdb->prefix . 'daworks_chatbot';
+			$table = $wpdb -> prefix . 'daworks_chatbot';
 			
-			$page = (Null !== $_REQUEST['current_page']) ? ((int) $_REQUEST['current_page']) : 1;
-			$start_point = $page - 1;
-			$limit = 6;
+			$mode = ( NULL !== $_REQUEST[ 'mode' ] ) ? $_REQUEST[ 'mode' ] : 'list';
 			
-			$pagination = new Pagination();
-			$pagination -> setCurrent($page);
-			$pagination -> setKey( 'current_page' );
-			$pagination -> setCrumbs( 10 );
-			$pagination -> setRPP( $limit );
-			$pagination -> setPrevious ( '이전');
-			$pagination -> setNext ( '다음');
+			if ( $mode == 'list') {
+					 // 리스트 뷰
+					 $page        = ( NULL !== $_REQUEST[ 'current_page' ] ) ? ( (int) $_REQUEST[ 'current_page' ] ) : 1;
+					 $start_point = $page - 1;
+					 $limit       = 15;
+					 
+					 $pagination = new Pagination();
+					 $pagination -> setCurrent ( $page );
+					 $pagination -> setKey ( 'current_page' );
+					 $pagination -> setCrumbs ( 10 );
+					 $pagination -> setRPP ( $limit );
+					 $pagination -> setPrevious ( '이전' );
+					 $pagination -> setNext ( '다음' );
+					 
+					 $query  = "SELECT * FROM {$table} ORDER BY created_at DESC LIMIT {$start_point}, {$limit}";
+					 $result = $wpdb -> get_results ( $query, OBJECT );
+					 $total  = $wpdb -> get_var ( "SELECT count(*) FROM $table" );
+					 
+					 $pagination -> setTotal ( $total );
+					 
+					 require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-result.php';
+			}
+			else if ( $mode == 'show' ) {
+				$show_id = (null !== $_REQUEST['show_id']) ? $_REQUEST['show_id'] : null;
+				if ( null !== $show_id ) {
+					$query = "SELECT * FROM $table WHERE id = $show_id";
+					$result = $wpdb->get_row($query);
+					$current_page = !empty($_REQUEST['current_page']) ? $_REQUEST['current_page'] : 1;
+					
+					$prev_query = "SELECT MAX(id) FROM $table WHERE id < $show_id";
+					$prev_id = $wpdb->get_var($prev_query);
+					
+					$next_query = "SELECT MIN(id) FROM $table WHERE id > $show_id";
+					$next_id = $wpdb->get_var($next_query);
+					
+					require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-show.php';
+				}
+				else {
+					echo '<script>alert("정상적인 경로로 접속하세요.");history.back();</script>';
+				}
+			}
+			else {
 			
-			$query = "SELECT * FROM {$table} ORDER BY created_at DESC LIMIT {$start_point}, {$limit}";
-			$result = $wpdb->get_results($query, OBJECT);
-			$total = $wpdb->get_var("SELECT count(*) FROM $table");
-			
-			$pagination->setTotal($total);
-			
-			require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-result.php';
+			}
 			
 		}
 		
-		public function setup_message()
-		{
-			$option = get_option('daworks_chatbot_page_slug');
-			if ( !$option ) :
+		public function setup_message () {
+			$option = get_option ( 'daworks_chatbot_page_slug' );
+			if ( ! $option ) :
 				$screen = get_current_screen ();
-				if ( $screen->parent_base == 'daworks-chatbot' ) :
-			?>
-			<div class="notice notice-success is-dismissible">
-				<p><strong>DAWORKS CHATBOT</strong>이 정상적으로 설치되었습니다. <a href="<?php echo admin_url('admin.php?page=daworks-chatbot') ?>">설정하기</a></p>
-			</div>
-			<?php
+				if ( $screen -> parent_base == 'daworks-chatbot' ) :
+					?>
+			  <div class="notice notice-success is-dismissible">
+				  <p><strong>DAWORKS CHATBOT</strong>이 정상적으로 설치되었습니다. <a href="<?php echo admin_url ( 'admin.php?page=daworks-chatbot' ) ?>">설정하기</a></p>
+			  </div>
+					<?php
 				endif;
 			endif;
 		}

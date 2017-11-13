@@ -1,12 +1,3 @@
-<?php
-	/**
-	 * Created by PhpStorm.
-	 * User: dhlee
-	 * Date: 2017. 11. 10.
-	 * Time: PM 10:16
-	 */
-?>
-
 <div class="container-fluid" id="daworks-chatbot-wrap">
 	<div class="col-sm-12 col-md-10">
 		<h3 class="page-title">캠페인 목록</h3>
@@ -16,11 +7,11 @@
 		<table class="table table-striped" id="daworks-chatbot-list-table">
 			<thead>
 			<tr>
-				<th width="30"><input type="checkbox" id="checkall"></th>
-				<th width="150">사진</th>
-				<th width="80">이름</th>
-				<th>내용</th>
-				<th width="150">등록일</th>
+				<th width="30" class="text-center"><input type="checkbox" id="checkall"></th>
+				<th width="150" class="text-center">사진</th>
+				<th width="120" class="text-center">이름</th>
+				<th>제목 / 내용</th>
+				<th width="150" class="text-center">등록일</th>
 				<th width="40"></th>
 			</tr>
 			</thead>
@@ -32,24 +23,34 @@
 			<?php endif ?>
 			<?php foreach($result as $item) : ?>
 			  <tr id="post-<?php echo $item->id?>">
-				  <td><input type="checkbox" name="id[]" value="<?php echo $item->id ?>"></td>
+				  <td class="text-center"><input type="checkbox" name="id[]" value="<?php echo $item->id ?>"></td>
 				  <td class="text-center">
 					  <?php if ( $item->photo !== 'none' ) : ?>
-					  <picture>
-						  <img src="<?php echo $item->photo ?>" alt="" class="img-responsive">
-					  </picture>
+						  <a href="<?php echo $item->photo ?>" data-lightbox="daworks-chatbot">
+							  <picture style="background-image:url(<?php echo $item->photo ?>)">
+							  </picture>
+						  </a>
 					  <?php else : ?>
 					    사진 없음
 					  <?php endif ?>
 				  </td>
-				  <td><?php echo $item->name ?></td>
+				  <td class="text-center"><?php echo $item->name ?></td>
 				  <td>
-				    <p>
-					    <b><?php echo $item->title ?></b> |
-			         <?php echo $item->story ?>
-				    </p>
+					  <a href="<?php echo admin_url('admin.php?page=daworks-chatbot-result&current_page='.$page.'&mode=show&show_id=' . $item->id)?>">
+						  <p>
+						    <?php echo $item->title ?><br>
+							  <?php
+								  if ( mb_strlen($item->story) > 50 ) {
+									  echo mb_substr($item->story, 0, 50) . '...';
+								  }
+								  else {
+									  echo sanitize_text_field ( $item->story );
+								  }
+							  ?>
+						  </p>
+					  </a>
 				  </td>
-				  <td><?php echo $item->created_at ?></td>
+				  <td class="text-center"><?php echo $item->created_at ?></td>
 				  <td>
 					  <a href="javascript:;" class="btn btn-link" onclick="deletePost(<?php echo $item->id ?>)">삭제</a>
 				  </td>
