@@ -10,14 +10,14 @@
  *
  * @link              https://daworks.io
  * @since             1.0.0
- * @package           Daworks_Kakao_Chatbot
+ * @package           Daworks_Chatbot
  *
  * @wordpress-plugin
- * Plugin Name:       daworks-kakao-chatbot
+ * Plugin Name:       디자인아레테 캠페인 챗봇
  * Plugin URI:        https://daworks.io
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
- * Author:            Design Arete
+ * Description:       글과 사진을 카카오톡으로 전송하면 플러스친구에서 처리해서 홈페이지에 자동으로 올려주는 캠페인용 챗봇
+ * Version:           Beta 1.0.0
+ * Author:            디자인아레테
  * Author URI:        https://daworks.io
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

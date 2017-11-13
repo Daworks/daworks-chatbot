@@ -4,18 +4,25 @@
  */
 #daworks-chatbot-wrap {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	flex-wrap: wrap;
 	clear:both;
 	font-family:sans-serif;
+	margin-left:-.5em;
+	margin-right:-.5em;
 }
 #daworks-chatbot-wrap .card {
 	flex-basis:250px;
-	margin-right:1em;
-	margin-bottom:1em;
+	margin:0 .5em 1em;
 	border:1px solid #ccc;
-	padding:5px;
+	padding:10px;
 	position:relative;
+}
+@media (max-width:414px) {
+	#daworks-chatbot-wrap .card {
+		flex-basis:100%;
+		margin-bottom:1.5em;
+	}
 }
 #daworks-chatbot-wrap .card picture {
 	display:block;

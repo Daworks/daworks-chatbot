@@ -103,16 +103,17 @@
 		
 		public function add_plugin_admin_menu () {
 			add_menu_page (
-				'챗봇 설정',
-				'챗봇',
+				'daworks_chatbot',
+				'캠페인 챗봇',
 				'manage_options',
 				'daworks-chatbot',
-				array ( $this, 'loading_admin_menu_page' )
+				array ( $this, 'loading_admin_menu_page' ),
+				'dashicons-admin-comments'
 			);
 			add_submenu_page (
 				'daworks-chatbot',
-				'챗봇 세팅',
-				'챗봇 세팅',
+				'챗봇 설정',
+				'챗봇 설정',
 				'manage_options',
 				'daworks-chatbot-setting',
 				array($this, 'loading_setting_page')
@@ -161,5 +162,17 @@
 			
 			require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-result.php';
 			
+		}
+		
+		public function setup_message()
+		{
+			$option = get_option('daworks_chatbot_page_slug');
+			if ( !$option ) :
+			?>
+			<div class="notice notice-success is-dismissible">
+				<p><strong>DAWORKS CHATBOT</strong>이 정상적으로 설치되었습니다. <a href="<?php echo admin_url('admin.php?page=daworks-chatbot') ?>">설정하기</a></p>
+			</div>
+			<?php
+			endif;
 		}
 	}
