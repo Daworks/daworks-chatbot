@@ -74,6 +74,29 @@
 			});
 		});
 
+		// 캠페인 제목 저장
+		$('#campaign-title-save').click(function(){
+			var title = $('#campaign_title').val();
+			if ( title.length == 0 ) {
+				alert('제목을 입력하세요.');
+				$('#campaign_title').focus();
+				return false;
+			}
+
+			var data = {action: 'daworks_chatbot_save_campaign_title', title: title };
+			$.post(ajaxurl, data, function(response){
+				var rtn = $.parseJSON(response);
+
+				if (rtn.status == 'success') {
+						$('#campaign-title-save').text('저장됨').removeClass('btn-primary').addClass('btn-success');
+				}
+				if ( rtn.status == 'fail' ) {
+					alert(rtn.message);
+					return false;
+				}
+			});
+		});
+
 		// 연결 페이지 저장
 		$('#savePageinfo').click(function(){
 			var src = $('#linked_page_slug'),

@@ -28,10 +28,11 @@
 	}
 	
 	function daworks_chatbot_keyboard () {
+		$campaign_title = get_option('daworks_chatbot_campaign_title');
 		$response = [
 			'type'    => 'buttons',
 			'buttons' => [
-				'원띵 챌린지',
+				$campaign_title,
 				'홈페이지'
 			]
 		];
@@ -48,10 +49,14 @@
 		$type     = $data -> type;
 		$user_key = $data -> user_key;
 		$content  = $data -> content;
+		
 		$dt       = new DateTime();
+		$dt->setTimezone(new DateTimeZone('Asia/Seoul'));
 		$now      = $dt -> format ( 'Y-m-d H:i:s' );
+		$campaign_title = get_option('daworks_chatbot_campaign_title');
 		$homelink = get_option('daworks_chatbot_page_slug');
 		$goodjob_url = plugins_url ('library/img/good_job.gif',dirname(__FILE__));
+		
 		
 		if ( $type == 'text' && $content == 'test' )
 		{
@@ -67,12 +72,12 @@
 			];
 		}
 		
-		if ( $type == 'text' && $content == '원띵 챌린지' ) {
+		if ( $type == 'text' && $content == $campaign_title ) {
 			$wpdb -> insert ( $table, array ( 'user_key' => $user_key, 'created_at' => $now ), array ( '%s', '%s' ) );
 			
 			$response = [
 				'message'  => [
-					'text' => '오늘 당신의 원띵 챌린지는 무엇인가요?'
+					'text' => $campaign_title . '을 시작할까요?'
 				],
 				'keyboard' => [
 					'type'    => 'buttons',
@@ -515,3 +520,25 @@
 		}
 	}
 	
+	// 캠페인 제목 저장
+	add_action('wp_ajax_daworks_chatbot_save_campaign_title', 'daworks_chatbot_save_campaign_title');
+	function daworks_chatbot_save_campaign_title()
+	{
+		try {
+			$title = (null !== $_REQUEST['title']) ? sanitize_text_field ( $_REQUEST['title'] ) : null;
+			if ( get_option('daworks_chatbot_campaign_title') ) {
+				if ( !update_option('daworks_chatbot_campaign_title', $title) ) throw new Exception('업데이트 실패');
+			}
+			else {
+				if ( !add_option('daworks_chatbot_campaign_title', $title) ) throw new Exception('캠페인 제목 저장 실패');
+			}
+			
+			echo json_encode(['status'=>'success']);
+			
+		} catch (Exception $e) {
+			echo json_encode(['status'=>'fail', 'message'=>$e->getMessage ()]);
+		}
+		finally {
+			wp_die();
+		}
+	}

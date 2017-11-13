@@ -168,11 +168,14 @@
 		{
 			$option = get_option('daworks_chatbot_page_slug');
 			if ( !$option ) :
+				$screen = get_current_screen ();
+				if ( $screen->parent_base == 'daworks-chatbot' ) :
 			?>
 			<div class="notice notice-success is-dismissible">
 				<p><strong>DAWORKS CHATBOT</strong>이 정상적으로 설치되었습니다. <a href="<?php echo admin_url('admin.php?page=daworks-chatbot') ?>">설정하기</a></p>
 			</div>
 			<?php
+				endif;
 			endif;
 		}
 	}
