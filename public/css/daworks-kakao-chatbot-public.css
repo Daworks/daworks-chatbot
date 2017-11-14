@@ -170,8 +170,8 @@
 	top:5px;
 }
 
-@media (max-width:414px),
-       (-webkit-min-device-pixel-ratio: 2) and (max-width:414px)
+@media (max-width:480px),
+       (-webkit-min-device-pixel-ratio: 2) and (max-width:480px)
 {
 	#daworks-chatbot-wrap {
 		margin-left:-.5em !important;
@@ -187,7 +187,13 @@
 		margin-bottom:1.5em;
 	}
 	#daworks-chatbot-wrap .card .picture {
+		display:block;
+		overflow:hidden;
 		height:180px;
+	}
+	#daworks-chatbot-wrap .card .picture img {
+		width:100%;
+		height:auto;
 	}
 	#daworks-chatbot-show .entry-content picture img {
 		width:100%;
