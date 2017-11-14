@@ -4,7 +4,7 @@
  */
 #daworks-chatbot-wrap {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-start;
 	flex-wrap: wrap;
 	clear:both;
 	font-family:sans-serif;
@@ -12,25 +12,68 @@
 	margin-right:-.5em;
 }
 #daworks-chatbot-wrap .card {
-	flex-basis:250px;
+	background-color:#fff;
+	border-radius:4px;
+	flex-basis:30%;
 	margin:0 .5em 1em;
 	border:1px solid #ccc;
 	padding:10px;
 	position:relative;
 }
+#daworks-chatbot-wrap .card:hover {
+	box-shadow:0 0 8px rgba(0,0,0,.1);
+	cursor:pointer;
+}
 @media (max-width:414px) {
+	#daworks-chatbot-wrap {
+		margin-left:-.5em !important;
+		margin-right:-.5em !important;
+		width:100% !important;
+		max-width:100% !important;
+	}
 	#daworks-chatbot-wrap .card {
 		flex-basis:100%;
+		margin-top:0;
+		margin-left:0;
+		margin-right:0;
 		margin-bottom:1.5em;
 	}
 }
+#daworks-chatbot-wrap .card .badge {
+	background-color:#FF5659;
+	color:#fff;
+	font-size:11px;
+	font-weight:bold;
+	padding:2px 10px;
+	position:absolute;
+	border-top-left-radius: 4px;
+	top:0;
+	left:0;
+	z-index:1000;
+}
+
 #daworks-chatbot-wrap .card picture {
 	display:block;
 	margin-bottom:10px;
+	height:180px;
+	background-size:cover;
+	background-position:50%;
+	background-color:#C8D1D7;
+	-webkit-transition: background-size 5s ease-in-out;
+	transition: background-size 5s ease-in-out;
+	position:relative;
 }
-#daworks-chatbot-wrap .card picture img {
-	width:100%;
-	height:auto;
+#daworks-chatbot-wrap .card picture:hover {
+	background-size:120%;
+}
+#daworks-chatbot-wrap .card picture.no-img:hover {
+	background-size:cover;
+}
+
+#daworks-chatbot-wrap .card picture span {
+	position:absolute;
+	left:50%;
+	top:50%;
 }
 #daworks-chatbot-wrap .card .card-title {
 	font-weight:bold;
@@ -67,4 +110,67 @@
 
 .daworks-chatbot-pagination  > .active > a {
 	color:#FF5659;
+}
+#daworks-chatbot-show .entry-box {
+	padding:1em;
+	border:4px solid #899CA7;
+	margin-bottom:32px;
+}
+#daworks-chatbot-show .entry-title {
+	font-size:24px;
+	font-weight:bold;
+	margin-bottom:10px;
+	text-align:center;
+}
+#daworks-chatbot-show .entry-meta {
+	font-family:sans-serif;
+	font-size:.85rem;
+	text-align:center;
+}
+#daworks-chatbot-show .entry-meta svg {
+	width:16px;
+	height:16px;
+	position:relative;
+	top:3px;
+	color:#899CA7;
+}
+#daworks-chatbot-show .entry-meta .writer {
+	color:#387AA7;
+	font-weight:bold;
+}
+#daworks-chatbot-show .entry-content picture {
+	display:block;
+	margin-bottom:1em;
+}
+
+.daworks_chatbot_navigation {
+	font-family:sans-serif;
+	margin-top:2em;
+	width:100%;
+	border-collapse:collapse;
+	border:none;
+}
+.daworks_chatbot_navigation td {
+	border:none;
+	width:33.3333%;
+}
+.daworks_chatbot_navigation td.text-center {
+	text-align:center;
+}
+.daworks_chatbot_navigation td.text-left {
+	text-align:left;
+}
+.daworks_chatbot_navigation td.text-right {
+	text-align:right;
+}
+
+.daworks_chatbot_navigation a {
+	position:relative;
+	text-decoration-color:#444955;
+	text-decoration-style:none;
+	box-shadow:none !important;
+}
+.daworks_chatbot_navigation svg {
+	position:relative;
+	top:5px;
 }
