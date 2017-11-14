@@ -1,13 +1,13 @@
-<div class="container">
+<div>
 	<?php
 		if ( count ( $records ) == 0 ) :
 			echo '<p class="text-center">등록된 스토리가 없습니다.</p>';
 		else :
-			echo '<p class="text-center">&quot;'.$total.'개&quot;의 스토리가 등록되었습니다</p>';
+			echo '<p class="text-center daworks-chatbot-leading">&quot;'.$total.'개&quot;의 스토리가 있습니다.</p>';
 		endif;
 	?>
 </div>
-<div class="container" id="daworks-chatbot-wrap">
+<div id="daworks-chatbot-wrap">
 	<?php
 		foreach ( $records as $card )  :
 	?>

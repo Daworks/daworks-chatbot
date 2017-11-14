@@ -82,14 +82,13 @@
 			
 			function show_frontend_page () {
 				global $wpdb;
-				$table   = $wpdb -> prefix . 'daworks_chatbot';
-				
-				$mode = !empty($_REQUEST['mode']) ? $_REQUEST['mode'] : 'list';
+				$table = $wpdb -> prefix . 'daworks_chatbot';
+				$mode = ! empty( $_REQUEST[ 'mode' ] ) ? $_REQUEST[ 'mode' ] : 'list';
 				
 				if ( $mode == 'list' ) :
-				
+					
 					require plugin_dir_path ( __DIR__ ) . 'library/PHP-Pagination/Pagination.class.php';
-					$page        = (Null !== $_REQUEST[ 'current_page' ]) ? ( (int) $_REQUEST[ 'current_page' ] ) : 1;
+					$page        = isset( $_REQUEST[ 'current_page' ] ) ? ( (int) $_REQUEST[ 'current_page' ] ) : 1;
 					$limit       = 9;
 					$start_point = $page * $limit - $limit;
 					
@@ -98,39 +97,39 @@
 					$pagination -> setKey ( 'current_page' );
 					$pagination -> setCrumbs ( 10 );
 					$pagination -> setRPP ( $limit );
-					$pagination -> setClasses ('daworks-chatbot-pagination');
-					$pagination -> setPrevious ( '이전');
-					$pagination -> setNext ( '다음');
+					$pagination -> setClasses ( 'daworks-chatbot-pagination' );
+					$pagination -> setPrevious ( '이전' );
+					$pagination -> setNext ( '다음' );
 					
 					$query   = "SELECT * FROM {$table} WHERE name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
 					$query   .= " ORDER BY id DESC LIMIT {$start_point}, {$limit}";
 					$records = $wpdb -> get_results ( $query );
-					$total = $wpdb->get_var("SELECT count(*) FROM {$table} WHERE name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0");
+					$total   = $wpdb -> get_var ( "SELECT count(*) FROM {$table} WHERE name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0" );
 					
 					$pagination -> setTotal ( $total );
 					$markup = $pagination -> parse ();
 					
 					require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-display.php';
 				
-				elseif ($mode == 'show') :
+				elseif ( $mode == 'show' ) :
 					
-					$show_id = (null !== $_REQUEST['show_id']) ? $_REQUEST['show_id'] : null;
-					if ( null !== $show_id ) {
+					$show_id = ( NULL !== $_REQUEST[ 'show_id' ] ) ? $_REQUEST[ 'show_id' ] : NULL;
+					if ( NULL !== $show_id ) {
 						$query = "select * from $table where id = $show_id";
-						$card = $wpdb->get_row($query);
+						$card  = $wpdb -> get_row ( $query );
 						
-						$prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
-						$next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
+						$prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
+						$next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
 						
-						$prev_id = $wpdb->get_var($prev_query);
-						$next_id = $wpdb->get_var($next_query);
-						$prev_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $prev_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0");
-						$next_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $next_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0");
+						$prev_id    = $wpdb -> get_var ( $prev_query );
+						$next_id    = $wpdb -> get_var ( $next_query );
 						
-						require plugin_dir_path ( __FILE__ )  . 'partials/daworks-kakao-chatbot-public-show.php';
+						$prev_title = (null !== $prev_id) ? $wpdb -> get_var ( "SELECT title FROM $table WHERE id = $prev_id" ) : '';
+						$next_title = (null !== $next_id) ? $wpdb -> get_var ( "SELECT title FROM $table WHERE id = $next_id" ) : '';
 						
-					}
-					else {
+						require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-show.php';
+						
+					} else {
 						echo "<script>history.back();</script>";
 					}
 				else :
