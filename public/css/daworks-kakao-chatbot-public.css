@@ -46,21 +46,16 @@
 }
 
 #daworks-chatbot-wrap .card .picture {
-	display:block;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
 	margin-bottom:10px;
 	height:220px;
-	background-size:cover;
-	background-position:50%;
-	background-color:#C8D1D7;
-	-webkit-transition: background-size .4s ease;
-	transition: background-size .4s ease;
 	position:relative;
+	overflow:hidden;
 }
-#daworks-chatbot-wrap .card .picture:hover {
-	background-size:120%;
-}
-#daworks-chatbot-wrap .card .picture.no-img:hover {
-	background-size:cover;
+#daworks-chatbot-wrap .card .picture img {
+	width:100%;
 }
 
 #daworks-chatbot-wrap .card .picture span {

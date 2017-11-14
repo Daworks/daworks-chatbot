@@ -20,7 +20,9 @@
 			 ?>
 			   <span class="badge">NEW</span>
 			 <?php endif ?>
-				<div class="picture" style="background-image:url(<?php echo ($card -> photo_check==1) ? $card -> photo : plugin_dir_url(__DIR__) . '../library/img/noimg.jpg'; ?>)"></div>
+				<div class="picture">
+					<img src="<?php echo ($card -> photo_check==1) ? $card -> photo : plugin_dir_url(__DIR__) . '../library/img/noimg.jpg'; ?>" alt="">
+				</div>
 			 <div class="card-title">
 				<?php echo $card -> title ?>
 			 </div>
