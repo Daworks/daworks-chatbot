@@ -142,6 +142,10 @@
 	display:block;
 	margin-bottom:1em;
 }
+#daworks-chatbot-show .entry-content picture img {
+	width:100%;
+	height:auto;
+}
 
 .daworks_chatbot_navigation {
 	font-family:sans-serif;
