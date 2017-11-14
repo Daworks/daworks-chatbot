@@ -119,13 +119,13 @@
 						$query = "select * from $table where id = $show_id";
 						$card = $wpdb->get_row($query);
 						
-						$prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id";
-						$next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id";
+						$prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
+						$next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
 						
 						$prev_id = $wpdb->get_var($prev_query);
 						$next_id = $wpdb->get_var($next_query);
-						$prev_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $prev_id");
-						$next_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $next_id");
+						$prev_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $prev_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0");
+						$next_title = $wpdb->get_var("SELECT title FROM $table WHERE id = $next_id name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0");
 						
 						require plugin_dir_path ( __FILE__ )  . 'partials/daworks-kakao-chatbot-public-show.php';
 						
