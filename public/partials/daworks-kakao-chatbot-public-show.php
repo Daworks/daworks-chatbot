@@ -23,7 +23,7 @@
 				<tbody>
 				<tr>
 					<td class="text-left">
-					<?php if ( $next_id ) : ?>
+					<?php if ( null !== $next_id ) : ?>
 						<a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $next_id, sanitize_text_field ( $_REQUEST['current_page'])); ?>"><i data-feather="arrow-left"></i> <?php echo mb_strimwidth($next_title, 0, 30, '...') ?></a>
 					<?php endif; ?>
 					</td>
@@ -31,7 +31,7 @@
 						<a href="<?php printf("%s?mode=list&current_page=%s", get_permalink(), sanitize_text_field ( $_REQUEST['current_page'])); ?>"><i data-feather="grid"></i></a>
 					</td>
 					<td class="text-right">
-					<?php if ( $prev_id ) : ?>
+					<?php if ( null !== $prev_id ) : ?>
 						<a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $prev_id, sanitize_text_field ( $_REQUEST['current_page'])); ?>"><?php echo mb_strimwidth($prev_title, 0, 30, '...') ?> <i data-feather="arrow-right"></i></a>
 					<?php endif ?>
 					</td>
