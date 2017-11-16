@@ -307,7 +307,13 @@
 			});
 			$save_path = wp_upload_dir();
 			$upload_dir = $save_path['basedir'].'/daworks_chatbot';
-			$upload_path = $save_path['baseurl'] . '/daworks_chatbot';
+			if ( $_SERVER['HTTPS'] == 'on' )
+			{
+				$upload_path = str_replace('http://','https://',$save_path['baseurl'] . '/daworks_chatbot');
+			}
+			else {
+				$upload_path = $save_path['baseurl'] . '/daworks_chatbot';
+			}
 			if ( ! file_exists ( $upload_dir) ) {
 				wp_mkdir_p ( $upload_dir );
 			}
