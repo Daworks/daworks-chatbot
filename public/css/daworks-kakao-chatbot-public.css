@@ -86,6 +86,8 @@
 }
 .daworks-chatbot-pagination {
 	list-style-type:none;
+	margin-left:0;
+	text-align:center;
 }
 .daworks-chatbot-pagination  > li {
 	display:inline-block;
