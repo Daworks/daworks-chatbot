@@ -144,7 +144,7 @@
 	margin-top:2em;
 	width:100%;
 	border-collapse:collapse;
-	border:none;
+	border-bottom:none;
 	background-color:#fff;
 }
 .daworks_chatbot_navigation td {
