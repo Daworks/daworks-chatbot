@@ -165,9 +165,12 @@
 
 .daworks_chatbot_navigation a {
 	position:relative;
-	text-decoration-color:#444955;
-	text-decoration-style:none;
+	color:#444955;
+	text-decoration:none !important;
 	box-shadow:none !important;
+}
+.daworks_chatbot_navigation a:hover {
+	color: #3366ff;
 }
 .daworks_chatbot_navigation svg {
 	position:relative;
