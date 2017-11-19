@@ -8,6 +8,7 @@
 .daworks-chatbot-leading {
 	font-size:2em;
 	font-weight:lighter;
+	margin-bottom:30px;
 }
 #daworks-chatbot-wrap {
 	display: flex;
