@@ -73,6 +73,7 @@
 #daworks-chatbot-wrap .card .card-content {
 	font-size:0.9em;
 	margin-bottom:1em;
+    	word-break: break-all;
 }
 #daworks-chatbot-wrap .card .card-name {
 	font-size:.9em;
