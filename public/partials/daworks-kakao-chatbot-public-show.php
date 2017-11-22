@@ -19,6 +19,10 @@
 					 <?php echo nl2br($card -> story) ?>
 			</div>
 			
+			<div class="content-comment">
+				<div class="fb-comment-embed" data-href="<?php echo $current_uri; ?>" data-width="560" data-include-parent="true"></div>
+			</div>
+			
 			<table class="daworks_chatbot_navigation">
 				<tbody>
 				<tr>

@@ -85,6 +85,14 @@
 				$table = $wpdb -> prefix . 'daworks_chatbot';
 				$mode = ! empty( $_REQUEST[ 'mode' ] ) ? $_REQUEST[ 'mode' ] : 'list';
 				
+				$http_scheme = 'http://';
+				if ( $_SERVER['HTTPS'] == 'on' ) {
+					$http_scheme = 'https://';
+				}
+				$host = $_SERVER['HTTP_HOST'];
+				$request = $_SERVER['REQUEST_URI'];
+				$current_uri = $http_scheme . $host . $request;
+				
 				if ( $mode == 'list' ) :
 					
 					require plugin_dir_path ( __DIR__ ) . 'library/PHP-Pagination/Pagination.class.php';
