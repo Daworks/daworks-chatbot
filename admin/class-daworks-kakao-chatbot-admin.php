@@ -142,11 +142,11 @@
 			global $wpdb;
 			$table = $wpdb -> prefix . 'daworks_chatbot';
 			
-			$mode = ( NULL !== $_REQUEST[ 'mode' ] ) ? $_REQUEST[ 'mode' ] : 'list';
+			$mode = isset($_REQUEST[ 'mode' ]) ? $_REQUEST[ 'mode' ] : 'list';
 			
 			if ( $mode == 'list') {
 					 // 리스트 뷰
-					 $page        = ( NULL !== $_REQUEST[ 'current_page' ] ) ? ( (int) $_REQUEST[ 'current_page' ] ) : 1;
+					 $page        = isset($_REQUEST[ 'current_page' ]) ? ( (int) $_REQUEST[ 'current_page' ] ) : 1;
 					 $start_point = $page - 1;
 					 $limit       = 15;
 					 
