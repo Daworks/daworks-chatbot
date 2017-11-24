@@ -79,8 +79,25 @@
 		public function frontend_page_show () {
 			
 			add_shortcode ( 'daworks-chatbot-view', 'show_frontend_page' );
-			
 			function show_frontend_page () {
+				$host = $_SERVER['HTTP_HOST'];
+				if ( $host === 'dev.daworks.io' ) :
+				?>
+					<div id="daworks-ad">
+						<p align="center">
+							<strong>Daworks Chatbot</strong>은 카카오톡 플러스친구의 스마트 채팅과 연동하여 사용하는 워드프레스용 챗봇 플러그인 입니다.<br>
+							캠페인 참여 유도, SNS Posting, 설문조사 및 결과 자동 수합 등 다양하게 응용하여 사용할 수 있습니다.<br>
+							워드프레스로 제작된 홈페이지는 간편하게 플러그인을 설치하여 연동할 수 있습니다.<br>
+							( 워드프레스가 아니라도 연동할 수 있습니다. )<br>
+						</p>
+						<br>
+						<p align="center">
+							문의 : <a href="mailto:cs@daworks.org">cs@daworks.org</a> / TEL <a href="tel:07044047726">070-4404-7726</a> / <a href="http://pf.kakao.com/_PxmwBd">카카오톡 오픈채팅</a>
+						</p>
+					</div>
+				<?php
+					endif;
+					
 				global $wpdb;
 				$table = $wpdb -> prefix . 'daworks_chatbot';
 				$mode = ! empty( $_REQUEST[ 'mode' ] ) ? $_REQUEST[ 'mode' ] : 'list';
@@ -143,6 +160,8 @@
 				else :
 				
 				endif;
+				
+				print('<p class="daworks-copyright"><a href="https://daworks.io">&copy;2017 디자인아레테</a></p>');
 				
 			}
 		}

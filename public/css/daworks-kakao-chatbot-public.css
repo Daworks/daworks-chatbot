@@ -3,211 +3,286 @@
  * included in this file.
  */
 .text-center {
-	text-align:center;
+	text-align: center;
 }
+
 .daworks-chatbot-leading {
-	font-size:2em;
-	font-weight:lighter;
-	margin-bottom:30px;
+	font-size: 2em;
+	font-weight: lighter;
+	margin-bottom: 30px;
 }
+
 #daworks-chatbot-wrap {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	font-family:sans-serif;
-	margin-left:-.5em;
-	margin-right:-.5em;
+	display: block;
+	font-family: sans-serif;
+	margin-left: -1rem;
+	margin-right: -1rem;
+	overflow: hidden;
 }
+
 #daworks-chatbot-wrap .card {
-	background-color:#fff;
-	border-radius:4px;
-	flex-basis:29%;
-	margin-bottom:3em;
-	border:1px solid #ccc;
-	padding:10px;
-	position:relative;
+	float: left;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	border: 1px solid #CCCCCC;
+	padding: 10px;
+	position: relative;
+	width: calc(33.333% - 2rem);
+	margin: 1rem;
 }
 
 #daworks-chatbot-wrap .card:hover {
-	box-shadow:0 0 8px rgba(0,0,0,.1);
-	cursor:pointer;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+	cursor: pointer;
 }
 
 #daworks-chatbot-wrap .card .badge {
-	background-color:#84C7EA;
-	color:#fff;
-	font-size:12px;
-	font-weight:bold;
-	padding:2px 14px 2px 10px;
-	position:absolute;
+	background-color: #84C7EA;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 2px 14px 2px 10px;
+	position: absolute;
 	border-top-left-radius: 4px;
-	top:0;
-	left:0;
-	z-index:1000;
+	top: 0;
+	left: 0;
+	z-index: 1000;
 }
 
 #daworks-chatbot-wrap .card .picture {
-	display:flex;
-	flex-direction:column;
-	justify-content:center;
-	margin-bottom:10px;
-	height:220px;
-	position:relative;
-	overflow:hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-bottom: 10px;
+	height: 220px;
+	position: relative;
+	overflow: hidden;
 }
+
 #daworks-chatbot-wrap .card .picture img {
-	width:100%;
+	width: 100%;
+	transform: scale(1.2);
+	transition: all .3s ease-in-out;
+}
+
+#daworks-chatbot-wrap .card .picture img:hover {
+	transform: scale(1.4);
 }
 
 #daworks-chatbot-wrap .card .picture span {
-	position:absolute;
-	left:50%;
-	top:50%;
+	position: absolute;
+	left: 50%;
+	top: 50%;
 }
+
 #daworks-chatbot-wrap .card .card-title {
-	font-weight:bold;
-	text-align:center;
-	padding-bottom:5px;
-	margin-bottom:1em;
-	border-bottom:1px solid #eee;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 5px;
+	margin-bottom: 1em;
+	border-bottom: 1px solid #EEEEEE;
 }
+
 #daworks-chatbot-wrap .card .card-content {
-	font-size:0.9em;
-	margin-bottom:1em;
-    	word-break: break-all;
+	font-size: 0.9em;
+	margin-bottom: 1em;
+	word-break: break-all;
 }
+
 #daworks-chatbot-wrap .card .card-name {
-	font-size:.9em;
-	line-height:1.6em;
+	font-size: .9em;
+	line-height: 1.6em;
 }
+
 #daworks-chatbot-wrap .card .card-date {
-	float:right;
-	font-size:.8em;
+	float: right;
+	font-size: .8em;
 }
+
 .daworks-chatbot-pagination {
-	list-style-type:none;
-	margin-left:0;
-	text-align:center;
-}
-.daworks-chatbot-pagination  > li {
-	display:inline-block;
-	padding:5px 8px;
-	font-family:sans-serif;
-	font-weight:bold;
+	list-style-type: none;
+	margin-left: 0;
+	text-align: center;
 }
 
-.daworks-chatbot-pagination  > li > a {
-	text-decoration:none;
+.daworks-chatbot-pagination > li {
+	display: inline-block;
+	padding: 5px 8px;
+	font-family: sans-serif;
+	font-weight: bold;
 }
 
-.daworks-chatbot-pagination  > .active > a {
-	color:#FF5659;
+.daworks-chatbot-pagination > li > a {
+	text-decoration: none;
 }
+
+.daworks-chatbot-pagination > .active > a {
+	color: #FF5659;
+}
+
 #daworks-chatbot-show .entry-box {
-	padding:1em;
-	border:4px solid #899CA7;
-	margin-bottom:32px;
+	padding: 1em;
+	border: 4px solid #899CA7;
+	margin-bottom: 32px;
 }
+
 #daworks-chatbot-show .entry-title {
-	font-size:24px;
-	font-weight:bold;
-	margin-bottom:10px;
-	text-align:center;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	text-align: center;
 }
+
 #daworks-chatbot-show .entry-meta {
-	font-family:sans-serif;
-	font-size:.85rem;
-	text-align:center;
+	font-family: sans-serif;
+	font-size: .85rem;
+	text-align: center;
 }
+
 #daworks-chatbot-show .entry-meta svg {
-	width:16px;
-	height:16px;
-	position:relative;
-	top:3px;
-	color:#899CA7;
+	width: 16px;
+	height: 16px;
+	position: relative;
+	top: 3px;
+	color: #899CA7;
 }
+
 #daworks-chatbot-show .entry-meta .writer {
-	color:#387AA7;
-	font-weight:bold;
+	color: #387AA7;
+	font-weight: bold;
 }
+
 #daworks-chatbot-show .entry-content picture {
-	display:block;
-	margin-bottom:1em;
+	display: block;
+	margin-bottom: 1em;
 }
+
 #daworks-chatbot-show .entry-content picture img {
-	width:100%;
-	height:auto;
+	width: 100%;
+	height: auto;
 }
+
 #daworks-chatbot-show .entry-content .content-body {
-	font-family:'Iropke Batang', sans-serif;
-	font-size:16px;
+	font-family: 'Iropke Batang', sans-serif;
+	font-size: 16px;
 }
 
 .daworks_chatbot_navigation {
-	font-family:sans-serif;
-	margin-top:2em;
-	width:100%;
-	border-collapse:collapse;
-	border:none !important;
-	background-color:#fff;
+	font-family: sans-serif;
+	margin-top: 2em;
+	width: 100%;
+	border-collapse: collapse;
+	border: none !important;
+	background-color: #FFFFFF;
 }
+
 .daworks_chatbot_navigation td {
-	border:none !important;
-	width:33.3333%;
-	line-height:1.2em;
-	background-color:#fff;
+	border: none !important;
+	width: 33.3333%;
+	line-height: 1.2em;
+	background-color: #FFFFFF;
 }
+
 .daworks_chatbot_navigation td.text-center {
-	text-align:center;
+	text-align: center;
 }
+
 .daworks_chatbot_navigation td.text-left {
-	text-align:left;
+	text-align: left;
 }
+
 .daworks_chatbot_navigation td.text-right {
-	text-align:right;
+	text-align: right;
 }
 
 .daworks_chatbot_navigation a {
-	position:relative;
-	color:#444955;
-	text-decoration:none !important;
-	box-shadow:none !important;
-}
-.daworks_chatbot_navigation a:hover {
-	color: #3366ff;
-}
-.daworks_chatbot_navigation svg {
-	position:relative;
-	top:5px;
+	position: relative;
+	color: #444955;
+	text-decoration: none !important;
+	box-shadow: none !important;
 }
 
-@media (max-width:480px),
-       (-webkit-min-device-pixel-ratio: 2) and (max-width:480px)
-{
+.daworks_chatbot_navigation a:hover {
+	color: #3366FF;
+}
+
+.daworks_chatbot_navigation svg {
+	position: relative;
+	top: 5px;
+}
+
+@media (max-width: 480px),
+			 (-webkit-min-device-pixel-ratio: 2) and (max-width: 480px) {
+
 	#daworks-chatbot-wrap {
-		margin-left:-.5em !important;
-		margin-right:-.5em !important;
-		width:100% !important;
-		max-width:100% !important;
-	}
-	#daworks-chatbot-wrap .card {
-		flex-basis:100%;
-		margin-top:0;
-		margin-left:0;
-		margin-right:0;
-		margin-bottom:1.5em;
-	}
-	#daworks-chatbot-wrap .card .picture {
-		display:block;
+		width: 100%;
 		overflow:hidden;
-		height:180px;
+		margin:1rem 0;
 	}
+
+	#daworks-chatbot-wrap .card {
+		margin:.5rem 0;
+		width:100%;
+	}
+
+	#daworks-chatbot-wrap .card .picture {
+		display: block;
+		overflow: hidden;
+		height: 180px;
+	}
+
 	#daworks-chatbot-wrap .card .picture img {
-		width:100%;
-		height:auto;
+		width: 100%;
+		height: auto;
 	}
+
 	#daworks-chatbot-show .entry-content picture img {
-		width:100%;
-		height:auto;
+		width: 100%;
+		height: auto;
 	}
+}
+.daworks-copyright {
+	text-align:right;
+	font-size:12px;
+	text-decoration:none;
+}
+.daworks-copyright a {
+	text-decoration: inherit;
+	transition:all .3s ease-in-out;
+}
+.daworks-copyright a:hover {
+	background-color:#D5F70F;
+}
+#daworks-ad {
+	text-decoration:none;
+	margin-bottom:2rem;
+	padding:1.2rem 1rem;
+	border:4px solid #9FBBD2;
+}
+#daworks-ad p {
+	margin:0;
+}
+#daworks-ad a {
+	text-decoration:inherit;
+	transition:all .3s ease-in-out;
+	position:relative;
+	overflow:hidden;
+}
+#daworks-ad a::after {
+	content: '';
+	display:inline-block;
+	margin-top:2px;
+	position:absolute;
+	bottom:-6px;
+	height:3px;
+	left:0;
+	right:0;
+	background-color:#73B7FF;
+	transition:all .3s ease-in-out;
+}
+#daworks-ad a:hover {
+	background-color:#D5F70F;
+}
+#daworks-ad a:hover::after {
+	opacity:0;
 }

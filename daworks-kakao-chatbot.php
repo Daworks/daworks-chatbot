@@ -16,7 +16,7 @@
  * Plugin Name:       디자인아레테 캠페인 챗봇
  * Plugin URI:        https://daworks.io
  * Description:       글과 사진을 카카오톡으로 전송하면 플러스친구에서 처리해서 홈페이지에 자동으로 올려주는 캠페인용 챗봇
- * Version:           Beta 1.0.1
+ * Version:           Beta 1.0.2
  * Author:            디자인아레테
  * Author URI:        https://daworks.io
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'PLUGIN_NAME_VERSION', '1.0.2' );
 
 /**
  * The code that runs during plugin activation.
