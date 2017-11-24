@@ -24,10 +24,10 @@
 					<img src="<?php echo ($card -> photo_check==1) ? $card -> photo : plugin_dir_url(__DIR__) . '../library/img/noimg.jpg'; ?>" alt="">
 				</div>
 			 <div class="card-title">
-				<?php echo $card -> title ?>
+				<?php echo mb_strimwidth($card -> title, 0, 30, '...') ?>
 			 </div>
 			 <div class="card-content">
-				<?php echo $card -> story ?>
+				<?php echo mb_strimwidth($card -> story, 0, 60,'...') ?>
 			 </div>
 			 <div class="card-name">
 				 <?php echo $card -> name ?>
