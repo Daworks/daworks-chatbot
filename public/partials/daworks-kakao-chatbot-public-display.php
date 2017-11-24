@@ -27,7 +27,7 @@
 				<?php echo mb_strimwidth($card -> title, 0, 30, '...') ?>
 			 </div>
 			 <div class="card-content">
-				<?php echo mb_strimwidth($card -> story, 0, 60,'...') ?>
+				<?php echo mb_strimwidth($card -> story, 0, 90,'...') ?>
 			 </div>
 			 <div class="card-name">
 				 <?php echo $card -> name ?>
