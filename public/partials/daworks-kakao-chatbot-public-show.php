@@ -18,16 +18,17 @@
 			<div class="content-body">
 					 <?php echo nl2br($card -> story) ?>
 			</div>
-			<div id="fb-root"></div>
-			<script>(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.6&appId=1617805988472516&autoLogAppEvents=1';
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
 			<div class="content-comment">
-				<div class="fb-comment-embed" data-href="<?php echo get_permalink() ?>" data-width="100%" data-include-parent="true"></div>
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.11&appId=1617805988472516';
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				<div class="fb-like" data-href="<?php echo get_permalink() ?>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+
 			</div>
 			
 			<table class="daworks_chatbot_navigation">
