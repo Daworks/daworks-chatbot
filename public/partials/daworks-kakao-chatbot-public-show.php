@@ -27,7 +27,7 @@
 			  fjs.parentNode.insertBefore(js, fjs);
 			}(document, 'script', 'facebook-jssdk'));</script>
 			<div class="content-comment">
-				<div class="fb-comment-embed" data-href="<?php echo urlencode(get_permalink()); ?>" data-width="100%" data-include-parent="true"></div>
+				<div class="fb-comment-embed" data-href="<?php echo get_permalink() ?>" data-width="100%" data-include-parent="true"></div>
 			</div>
 			
 			<table class="daworks_chatbot_navigation">
