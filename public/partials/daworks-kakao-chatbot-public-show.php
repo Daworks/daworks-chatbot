@@ -18,7 +18,7 @@
 			<div class="content-body">
 					 <?php echo nl2br($card -> story) ?>
 			</div>
-			<div class="content-comment">
+			<div class="content-comment" style="margin:30px 0;">
 				<div id="fb-root"></div>
 				<script>(function(d, s, id) {
 				  var js, fjs = d.getElementsByTagName(s)[0];
