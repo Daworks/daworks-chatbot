@@ -101,15 +101,18 @@
 			
 			return $response;
 		}
+		 
+		 
+		 if ( $type == 'text'  && $content == '사진 업로드' ) {
+			 $response = [
+				 'message' => [
+					 'text' => '[+]버튼을 터치해서 사진을 보내주세요.]'
+				 ]
+			 ];
+			 
+			 return $response;
+		 }
 		
-		if ( $type == 'text' && $content == '사진 올리기') {
-			$response = [
-					'message' => [
-							'text' => '[+]를 터치해서 사진을 올려주세요.'
-					]
-			];
-			return $response;
-		}
 		
 		if ( $type == 'text' && ( $content == 'GO GO !' || $content == '다시') ) {
 			$query = "SELECT name FROM $table WHERE user_key = '{$user_key}' and name IS NOT NULL LIMIT 1";
