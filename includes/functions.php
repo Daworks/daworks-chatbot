@@ -102,6 +102,15 @@
 			return $response;
 		}
 		
+		if ( $type == 'text' && $content == '사진 올리기') {
+			$response = [
+					'message' => [
+							'text' => '[+]를 터치해서 사진을 올려주세요.'
+					]
+			];
+			return $response;
+		}
+		
 		if ( $type == 'text' && ( $content == 'GO GO !' || $content == '다시') ) {
 			$query = "SELECT name FROM $table WHERE user_key = '{$user_key}' and name IS NOT NULL LIMIT 1";
 			$username   = $wpdb -> get_var ( $query );
@@ -238,7 +247,10 @@
 					],
 					'keyboard' => [
 						'type' => 'buttons',
-						'buttons' => ['사진은 생략할께요']
+						'buttons' => [
+								'사진 업로드',
+								'사진은 생략할께요'
+						]
 					]
 				];
 				return $response;
