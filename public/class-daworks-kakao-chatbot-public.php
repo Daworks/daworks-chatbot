@@ -138,8 +138,9 @@
 					$markup = $pagination -> parse ();
 					
 					require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-display.php';
+                endif;
 				
-				elseif ( $mode == 'show' ) :
+				if ( $mode == 'show' ) :
 					
 					$show_id = ( NULL !== $_REQUEST[ 'show_id' ] ) ? $_REQUEST[ 'show_id' ] : NULL;
 					if ( NULL !== $show_id ) {
