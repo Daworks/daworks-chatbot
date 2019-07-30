@@ -158,7 +158,7 @@
 		                    $prev_title = (null !== $prev_id) ? $wpdb -> get_var ( "SELECT title FROM {$table} WHERE id = {$prev_id}" ) : '';
 		                    $next_title = (null !== $next_id) ? $wpdb -> get_var ( "SELECT title FROM {$table} WHERE id = {$next_id}" ) : '';
 
-		                    $view = file_get_contents(plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-show.php');
+		                    $view = require(plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-show.php');
 		                    echo $view;
 
 	                    } else {
