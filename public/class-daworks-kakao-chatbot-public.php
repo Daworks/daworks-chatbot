@@ -171,9 +171,7 @@ HTML;
                         break;
                 }
 
-                $now = new \DateTime();
-				$nowYear = $now->format('Y');
-				sprintf('<p class="daworks-copyright"><a href="https://daworks.io">&copy;%s 디자인아레테</a></p>', $nowYear);
+				echo sprintf('<p class="daworks-copyright"><a href="https://daworks.io">&copy;%s 디자인아레테</a></p>', date('Y'));
 
 			}
 		}
