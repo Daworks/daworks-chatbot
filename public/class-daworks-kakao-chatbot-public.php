@@ -94,6 +94,9 @@
 						<p align="center">
 							문의 : <a href="mailto:cs@daworks.io">cs@daworks.io</a> / TEL <a href="tel:07044047726">070-4404-7726</a> / <a href="http://pf.kakao.com/_PxmwBd">카카오톡 오픈채팅</a>
 						</p>
+                        <p align="center">
+                            다운로드 : <a href="https://github.com/Daworks/daworks-chatbot">https://github.com/Daworks/daworks-chatbot</a>
+                        </p>
 					</div>
 				<?php
 					endif;
