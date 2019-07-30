@@ -138,7 +138,8 @@
 	                    $pagination -> setTotal ( $total );
 	                    $markup = $pagination -> parse ();
 
-	                    require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-display.php';
+	                    $view = require (plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-display.php');
+	                    echo $view;
                         break;
 
                     case "show" :
