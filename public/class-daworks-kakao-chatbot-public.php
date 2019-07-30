@@ -142,8 +142,10 @@
                         break;
 
                     case "show" :
-	                    $show_id = ( NULL !== $_REQUEST[ 'show_id' ] ) ? $_REQUEST[ 'show_id' ] : NULL;
-	                    if ( NULL !== $show_id ) {
+
+                        $show_id = ( NULL !== $_REQUEST[ 'show_id' ] ) ? $_REQUEST[ 'show_id' ] : NULL;
+
+	                    if ( $show_id ) {
 
 		                    $query = "select * from {$table} where id = {$show_id}";
 		                    $prev_query = "SELECT max(id) prev_id FROM {$table} WHERE id < {$show_id} AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
@@ -161,7 +163,7 @@
 		                    require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-show.php';
 
 	                    } else {
-		                    echo "<script>history.back();</script>";
+		                    print("<script>history.back();</script>");
 	                    }
 
                         break;
