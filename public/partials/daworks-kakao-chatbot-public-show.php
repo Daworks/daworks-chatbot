@@ -3,6 +3,7 @@
     <div id="daworks-chatbot-show">
         <div class="entry-box">
             <h3 class="entry-title">
+                <?php var_dump($card) ?>
                 &quot;<?php echo $card->title ?>&quot;
             </h3>
             <div class="entry-meta">
