@@ -83,23 +83,23 @@
 
 				$host = $_SERVER['HTTP_HOST'];
 				if ( $host === 'dev.daworks.io' ) :
-				?>
-					<div id="daworks-ad">
-						<p align="center">
-							<strong>Daworks Chatbot</strong>은 카카오톡 플러스친구의 스마트 채팅과 연동하여 사용하는 워드프레스용 챗봇 플러그인 입니다.<br>
-							캠페인 참여 유도, SNS Posting, 설문조사 및 결과 자동 수합 등 다양하게 응용하여 사용할 수 있습니다.<br>
-							워드프레스로 제작된 홈페이지는 간편하게 플러그인을 설치하여 연동할 수 있습니다.<br>
-							( 워드프레스가 아니라도 연동할 수 있습니다. 별도 문의가 필요합니다. )<br>
-						</p>
-						<br>
-						<p align="center">
-							문의 : <a href="mailto:cs@daworks.io">cs@daworks.io</a> / TEL <a href="tel:07044047726">070-4404-7726</a> / <a href="http://pf.kakao.com/_PxmwBd">카카오톡 오픈채팅</a>
-						</p>
-                        <p align="center">
-                            다운로드 : <a href="https://github.com/Daworks/daworks-chatbot">https://github.com/Daworks/daworks-chatbot</a>
-                        </p>
-					</div>
-				<?php
+                    $info = <<< HTML
+<div id="daworks-ad">
+    <p align="center">
+        <strong>Daworks Chatbot</strong>은 카카오톡 플러스친구의 스마트 채팅과 연동하여 사용하는 워드프레스용 챗봇 플러그인 입니다.<br>
+        캠페인 참여 유도, SNS Posting, 설문조사 및 결과 자동 수합 등 다양하게 응용하여 사용할 수 있습니다.<br>
+        워드프레스로 제작된 홈페이지는 간편하게 플러그인을 설치하여 연동할 수 있습니다.<br>
+        ( 워드프레스가 아니라도 연동할 수 있습니다. 별도 문의가 필요합니다. )<br>
+    </p>
+    <br>
+    <p align="center">
+        문의 : <a href="mailto:cs@daworks.io">cs@daworks.io</a> / TEL <a href="tel:07044047726">070-4404-7726</a> / <a href="http://pf.kakao.com/_PxmwBd">카카오톡 오픈채팅</a>
+    </p>
+    <p align="center">
+        다운로드 : <a href="https://github.com/Daworks/daworks-chatbot">https://github.com/Daworks/daworks-chatbot</a>
+    </p>
+</div>
+HTML;
 					endif;
 					
 				global $wpdb;
