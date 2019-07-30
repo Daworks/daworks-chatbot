@@ -170,8 +170,10 @@ HTML;
 
                         break;
                 }
-				
-				print('<p class="daworks-copyright"><a href="https://daworks.io">&copy;2017 디자인아레테</a></p>');
+
+                $now = new \DateTime();
+				$nowYear = $now->format('Y');
+				sprintf('<p class="daworks-copyright"><a href="https://daworks.io">&copy;%s 디자인아레테</a></p>', $nowYear);
 
 			}
 		}
