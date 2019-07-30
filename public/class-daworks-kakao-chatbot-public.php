@@ -160,8 +160,7 @@
 					} else {
 						echo "<script>history.back();</script>";
 					}
-				else :
-				
+
 				endif;
 				
 				print('<p class="daworks-copyright"><a href="https://daworks.io">&copy;2017 디자인아레테</a></p>');
