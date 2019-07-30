@@ -144,17 +144,17 @@
                     case "show" :
 	                    $show_id = ( NULL !== $_REQUEST[ 'show_id' ] ) ? $_REQUEST[ 'show_id' ] : NULL;
 	                    if ( NULL !== $show_id ) {
-		                    $query = "select * from $table where id = $show_id";
+
+		                    $query = "select * from {$table} where id = {$show_id}";
+		                    $prev_query = "SELECT max(id) prev_id FROM {$table} WHERE id < {$show_id} AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
+		                    $next_query = "SELECT min(id) next_id FROM {$table} WHERE id > {$show_id} AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
+
 		                    $card  = $wpdb -> get_row ( $query );
-
-		                    $prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
-		                    $next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
-
 		                    $prev_id    = $wpdb -> get_var ( $prev_query );
 		                    $next_id    = $wpdb -> get_var ( $next_query );
 
-		                    $prev_title = (null !== $prev_id) ? $wpdb -> get_var ( "SELECT title FROM $table WHERE id = $prev_id" ) : '';
-		                    $next_title = (null !== $next_id) ? $wpdb -> get_var ( "SELECT title FROM $table WHERE id = $next_id" ) : '';
+		                    $prev_title = (null !== $prev_id) ? $wpdb -> get_var ( "SELECT title FROM {$table} WHERE id = {$prev_id}" ) : '';
+		                    $next_title = (null !== $next_id) ? $wpdb -> get_var ( "SELECT title FROM {$table} WHERE id = {$next_id}" ) : '';
 
 		                    require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-public-show.php';
 
