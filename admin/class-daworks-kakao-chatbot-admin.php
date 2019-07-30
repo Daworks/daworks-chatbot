@@ -18,7 +18,7 @@
 	 *
 	 * @package    Daworks_Kakao_Chatbot
 	 * @subpackage Daworks_Kakao_Chatbot/admin
-	 * @author     Design Arete <cs@daworks.org>
+	 * @author     Design Arete <cs@daworks.io>
 	 */
 	class Daworks_Kakao_Chatbot_Admin {
 		

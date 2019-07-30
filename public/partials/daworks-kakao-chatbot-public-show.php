@@ -24,7 +24,7 @@
 				  var js, fjs = d.getElementsByTagName(s)[0];
 				  if (d.getElementById(id)) return;
 				  js = d.createElement(s); js.id = id;
-				  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v2.11&appId=1617805988472516';
+				  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.3&appId=1617805988472516';
 				  fjs.parentNode.insertBefore(js, fjs);
 				}(document, 'script', 'facebook-jssdk'));</script>
 				<div class="fb-like" data-href="<?php echo home_url( add_query_arg( NULL, NULL ) ); ?>" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>

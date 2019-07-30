@@ -35,11 +35,10 @@
 				<ol>
 					<li>챗봇 설정 메뉴에서 설정을 완료하신 후 사용하세요.</li>
 					<li>목록 페이지에서 등록된 글을 관리할 수 있습니다.</li>
-					<li>설치에 관한 문의는 디자인아레테 플러스친구에서 1:1로 처리해드립니다.</li>
 					<li>디자인아레테 플러스친구 : <a href="http://pf.kakao.com/_PxmwBd" target="_blank">http://pf.kakao.com/_PxmwBd</a></li>
 					<li>디자인아레테 홈페이지 : <a href="https://daworks.io" target="_blank">https://daworks.io</a></li>
 					<li>캠페인 챗봇을 다양하게 응용할 수 있습니다. 각종 결과 보고 및 신청서 자동 접수 등 개발 문의 환영합니다.</li>
-					<li>문의 이메일 : <a href="mailto:cs@daworks.org">cs@daworks.org</a></li>
+					<li>문의 이메일 : <a href="mailto:cs@daworks.org">cs@daworks.io</a></li>
 				</ol>
 			</div>
 		</div>
