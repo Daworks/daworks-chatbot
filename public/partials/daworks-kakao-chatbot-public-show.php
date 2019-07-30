@@ -40,8 +40,8 @@
                 <tr>
                     <td class="text-left">
                         <?php if (!empty($next_id)) : ?>
-                            <a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $next_id, sanitize_text_field($_REQUEST['current_page'])); ?>"><i
-                                        data-feather="arrow-left"></i> <?php echo mb_strimwidth($next_title, 0, 30, '...') ?>
+                            <a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $next_id, sanitize_text_field($_REQUEST['current_page'])); ?>">
+                                <i data-feather="arrow-left"></i> <?php echo mb_strimwidth( $next_title, 0, 30, '...') ?>
                             </a>
                         <?php endif; ?>
                     </td>
@@ -51,7 +51,7 @@
                     </td>
                     <td class="text-right">
                         <?php if (!empty($prev_id)) : ?>
-                            <a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $prev_id, sanitize_text_field($_REQUEST['current_page'])); ?>"><?php echo mb_strimwidth($prev_title, 0, 30, '...') ?>
+                            <a href="<?php sprintf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $prev_id, sanitize_text_field($_REQUEST['current_page'])); ?>"><?php echo mb_strimwidth($prev_title, 0, 30, '...') ?>
                                 <i data-feather="arrow-right"></i></a>
                         <?php endif ?>
                     </td>
@@ -61,6 +61,4 @@
         </div>
     </div>
 </section>
-<script>
-    feather.replace()
-</script>
+<script>feather.replace();</script>
