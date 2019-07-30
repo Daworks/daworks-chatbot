@@ -15,7 +15,7 @@
                 <picture>
                     <img src="<?= $card->photo ?>" alt="">
                 </picture>
-            <? endif ?>
+            <?php endif ?>
             <div class="content-body">
                 <?php echo nl2br($card->story) ?>
             </div>
@@ -43,7 +43,7 @@
                             <a href="<?php printf("%s?mode=show&show_id=%s&current_page=%s", get_permalink(), $next_id, sanitize_text_field($_REQUEST['current_page'])); ?>">
                                 <i data-feather="arrow-left"></i> <?php echo mb_strimwidth( $next_title, 0, 30, '...') ?>
                             </a>
-                        <?php endif; ?>
+                        <?php endif ?>
                     </td>
                     <td class="text-center">
                         <a href="<?php printf("%s?mode=list&current_page=%s", get_permalink(), sanitize_text_field($_REQUEST['current_page'])); ?>"><i
