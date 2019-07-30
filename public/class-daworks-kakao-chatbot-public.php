@@ -100,7 +100,9 @@
     </p>
 </div>
 HTML;
-					endif;
+					echo $info;
+
+				endif;
 					
 				global $wpdb;
 				$table = $wpdb -> prefix . 'daworks_chatbot';
