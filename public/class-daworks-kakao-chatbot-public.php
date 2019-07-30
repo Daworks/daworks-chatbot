@@ -146,8 +146,6 @@
 						$query = "select * from $table where id = $show_id";
 						$card  = $wpdb -> get_row ( $query );
 
-						var_dump($card);
-						
 						$prev_query = "SELECT max(id) prev_id FROM $table WHERE id < $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
 						$next_query = "SELECT min(id) next_id FROM $table WHERE id > $show_id AND name_check > 0 AND title_check > 0 AND story_check > 0 AND photo_check > 0";
 						
