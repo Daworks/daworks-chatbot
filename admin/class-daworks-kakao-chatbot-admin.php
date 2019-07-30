@@ -166,7 +166,7 @@
 					 
 					 require plugin_dir_path ( __FILE__ ) . 'partials/daworks-kakao-chatbot-result.php';
 			}
-			else if ( $mode == 'show' ) {
+			if ( $mode == 'show' ) {
 				$show_id = (null !== $_REQUEST['show_id']) ? $_REQUEST['show_id'] : null;
 				if ( null !== $show_id ) {
 					$query = "SELECT * FROM $table WHERE id = $show_id";
@@ -185,10 +185,6 @@
 					echo '<script>alert("정상적인 경로로 접속하세요.");history.back();</script>';
 				}
 			}
-			else {
-			
-			}
-			
 		}
 		
 		public function setup_message () {
