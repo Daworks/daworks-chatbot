@@ -80,7 +80,7 @@
 			
 			add_shortcode ( 'daworks-chatbot-view', 'show_frontend_page' );
 			function show_frontend_page () {
-			    ob_start();
+
 				$host = $_SERVER['HTTP_HOST'];
 				if ( $host === 'dev.daworks.io' ) :
 				?>
@@ -171,8 +171,6 @@
 				
 				print('<p class="daworks-copyright"><a href="https://daworks.io">&copy;2017 디자인아레테</a></p>');
 
-				ob_end_flush();
-				
 			}
 		}
 		
